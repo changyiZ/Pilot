@@ -8,6 +8,13 @@
 
 **Pilot Engine** is a tiny game engine used for the [gams104](https://games104.boomingtech.com) course.
 
+## Continuous build status    
+    
+Build Type | Status  
+:-: | :-:  
+**Build Linux** | [![Build Linux](https://github.com/BoomingTech/Pilot/actions/workflows/build_linux.yml/badge.svg)](https://github.com/BoomingTech/Pilot/actions/workflows/build_linux.yml)  
+**Build MacOS** | [![Build MacOS](https://github.com/BoomingTech/Pilot/actions/workflows/build_macos.yml/badge.svg)](https://github.com/BoomingTech/Pilot/actions/workflows/build_macos.yml)  
+
 ## Prerequisites
 
 To build Pilot, you must first install the following tools.
@@ -25,14 +32,19 @@ To build Pilot, you must first install the following tools.
 ### Ubuntu 20.04
  - apt install the following packages
 ```
-apt install git
-apt install cmake
-apt install clang
-apt install libxcb1-dev
+apt install libxrandr-dev
+apt install libxrender-dev
+apt install libxinerama-dev
+apt install libxcursor-dev
+apt install libxi-dev
+apt install libglvnd-dev
 apt install libvulkan-dev
+apt install clang
+apt install libc++-dev
 apt install vulkan-validationlayers
 apt install mesa-vulkan-drivers
 ```  
+- [CMake](https://github.com/Kitware/CMake/releases?page=3) (The version of the cmake provided by apt is too low)
 - [NVIDIA driver](https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html#runfile) (The AMD and Intel driver is open-source, and thus is installed automatically by mesa-vulkan-drivers)
 
 ## Build Pilot
@@ -62,4 +74,3 @@ cmake --build build --config Release
 
 ### Build on Ubuntu 20.04 
 You can execute the **build_linux.sh** to build the binaries.  
-  
