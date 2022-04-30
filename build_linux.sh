@@ -31,11 +31,9 @@ cd "${MY_DIR}"
 
 mkdir -p "engine/shader/generated/spv"
 
-# replaced by your own cmake path
-export PATH=./build_github_workflows/cmake-3.19.8-Linux-x86_64/bin${PATH:+:${PATH}}
 
 export CC=clang
 export CXX=clang++
-cmake -S engine -B build "${CMAKE_ARG_BUILD_TYPE_CONFIG}" -DCMAKE_EXPORT_COMPILE_COMMANDS=ON
+cmake -S . -B build "${CMAKE_ARG_BUILD_TYPE_CONFIG}" -DCMAKE_EXPORT_COMPILE_COMMANDS=ON
 
 cmake --build "${MY_DIR}/build" -- -j
